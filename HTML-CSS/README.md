@@ -1,2 +1,1 @@
-# FooCoding
-FooCoding projekts 
+https://github.com/MarianaShy/marianashy.github.io/blob/main/HTML-CSS/Homework2/index.html
