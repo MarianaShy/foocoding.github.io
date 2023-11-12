@@ -1,1 +1,1 @@
-# marianashy.github.io/homework/html-css/week02/index.html
+https://github.com/MarianaShy/marianashy.github.io/HTML-CSS/Homework2/index.html
