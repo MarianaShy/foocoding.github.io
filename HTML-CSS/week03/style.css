@@ -1,52 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@1&display=swap');
 *{
 	margin: 0;
 	padding: 0;
-}
-li a{
+	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
+	font-weight: normal;
+   color: #000;
 }
-
-img{
-	max-width: 100%;
-	
+button{
+	color: #01689b;
 }
 html{
-	font-size: 16px;
-	max-width: 100%;
-	
+	font-size: 1.265625rem;
+   line-height: 1.3827160494;
+	font-family: "ropa sans";
 }
-.main-container{
+body{
+	
+	margin: 0 auto;
+}
+header {
+	max-width: 1200px;
 	margin: 0 auto;
 	
 }
-.nav__level1{
-	height: 40px;
-	width: 100%;
-	position: fixed;
+.skiplinks {
+	position: absolute;
+	z-index: 100;
 	top: 0;
-	left: 0;
-	background-color: #F7F8F8;
+	left: 50%;
+	visibility: hidden;
+	padding: 0 16px;
 }
-.nav__level1-flex-box{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.logo__wrapper{
+	margin-inline-start: calc(50% - 25px);
+	width: 100%;
+	max-width: 1200px;
 }
-.nav__logo > svg{
-	height: 40px;
-	width: 66px;
+.logo .logo__figure {
+		display: flex;
+		align-items: flex-start;
+		margin: 0;
+	}
+.logo__text{
+	line-height: 1.1;
+   width: 100%;
+   max-width: 300px;
+   padding: 20px 10px 10px;
 }
-.nav__menu-toggle:after{
-	background-color: black;
-	width: 24px;
-	height: 24px;
-}
-.page__main{
-	margin: 2rem;
-}
-.showcase__flex-container{
-	display: flex;
-	justify-content: flex-start;
-	overflow: hidden;
-}
+@media (min-width: 506px)
+	{
+		
+	}
+@media  (min-width: 767px)
+	{
+		.logo__text{
+			padding: 50px 12px 25px;
+	  }
+	}
