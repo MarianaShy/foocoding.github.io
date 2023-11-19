@@ -1,6 +1,11 @@
 body{
-	background: linear-gradient(90deg, #5D4037 0%, #795548 100%);
+	background: linear-gradient(90deg, #a97b6d 0%, #eaa187 100%);
 	font-family: 'Courier New', Courier, monospace;
+	container: flex;
+	justify-content: space-between; 
+	max-width: 900px;
+	margin: 0 auto;
+	align-items: center;
 }
 .container{
 	container: flex;
@@ -12,9 +17,10 @@ body{
 }
 .header{
 	text-align: center;
-	background-color: #D7CCC8;
+	background-color: #eec7b9;
 	border-radius: 25px;
 	padding: 0.5rem;
+	width: 100%;
 }
 figure{
 	margin: 0.5rem;
@@ -56,11 +62,11 @@ h1{
 .header-link:active{
 	box-shadow: none;
 }
-/*End of header styles*/
+
 
 .line{
 	height: 1px;
-	color: #D7CCC8;
+	color: #5D4037;
 }
 main{
 	text-align: left;
@@ -94,9 +100,9 @@ main{
 
 }
 
-/*End of main styles*/
+
 footer{
-	background-color: #D7CCC8;
+	background-color: #eec7b9;
 	border-radius: 10px;
 	padding: 0.5rem;
 	text-align: center;
