@@ -216,6 +216,18 @@ li{
 html{
 	font-size: 18px;
 }
+.grid-item:nth-child(2){
+	border: 1px solid rgba(204, 204, 153);
+}
+.grid-item:nth-child(2):hover{
+	box-shadow: 0.1rem 0.1rem 5px 6px rgba(204, 204, 153, 0.4);
+	}
+.grid-item:nth-child(2) > h3 {
+		
+		background-color: rgba(204, 204, 153);
+		color:  rgba(102, 102, 51);
+		
+		}
 /*Grid*/
 #grid-floats{
 	grid-template-columns: repeat(4, 1fr);
@@ -233,7 +245,7 @@ html{
   			grid-column-end: auto;
 		}
 		#grid-floats > .grid-item:nth-child(2) {
-			grid-column-start: span 2;
+			grid-column-start: auto;
   			grid-column-end: auto;
 		}
 #grid-floats > .grid-item:first-child {
@@ -244,10 +256,12 @@ html{
 #grid-flex{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 	gap: 1rem;
 }
-#grid-flex > .grid-item{
+#grid-flex > .grid-item,
+#grid-flex > .grid-item:nth-child(2)
+{
 	width: 23%;
 	margin-bottom: 2vw;
 }
