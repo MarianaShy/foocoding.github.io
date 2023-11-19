@@ -270,24 +270,3 @@ html{
 }
 } 
 
-
-
-
-
-/* Extra large devices */
-@media (min-width: 1200px) {
-	main{
-	max-width: 1300px;
-}}
-	
-/*	{animation: rotate 4s linear infinite;
-}
-
-
-@keyframes rotate {
-	0% {
-	transform: rotate(0deg);
-	}
-	100% {
-	transform: rotate(360deg);
-	}*/
