@@ -25,6 +25,10 @@ header {
 	margin: 0 auto;
 	
 }
+.wrapper{
+	max-width: 1200px;
+	margin: 0 auto;
+}
 #content-wrapper {
 	padding-bottom: 3rem;
   }
@@ -73,7 +77,6 @@ header {
 	align-items: center;
 	justify-content: flex-start;
 	position: relative;
-	
 }
 .bread-crumb-nav {
 	display: flex;
@@ -235,11 +238,13 @@ li:not(:last-child) {
 	display: flex;
 	flex-direction: column;
 }
-footer>.wrapper{
+footer{
 	background-color: #01689b;
+}
+footer>.wrapper{
+	
 	width: 100%;
 	display: flex;
-	
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	padding: 2rem 1rem;
@@ -262,15 +267,34 @@ footer>.wrapper *{
 	font-weight: normal;
 	margin-bottom: 1rem;
 }
-
+.languages{
+	background-color: #fff;
+	width: 100%;
+}
 .languages__wrapper{
 	display: flex;
 	flex-direction: column;
-	margin: 1.5rem 1rem 1rem;
+	margin: 0 auto;
+	justify-content: flex-start;
+	padding: 1.5rem 1rem 1rem;
+	max-width: 1200px;
 }
 #language-menu-label{
 	margin: 0 0 1rem 0;
 }
+.languages__list{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.languages__link {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	border: 1px solid #01689b;
+	color: inherit;
+}
+
 @media (min-width: 506px)
 	{
 		.four-items>ul{
@@ -364,3 +388,9 @@ footer>.wrapper *{
 		}
 
 	}
+	@media  (min-width: 1200px)
+	{
+		html{
+			font-size: 24px;
+			line-height: 1.5;
+		}
