@@ -8,6 +8,7 @@
 	font-weight: normal;
    color: #000;
 }
+
 html{
 	font-size: 14px;
 	font-family: Verdana;
@@ -28,11 +29,12 @@ header {
 .wrapper{
 	max-width: 1200px;
 	margin: 0 auto;
+	
 }
 #content-wrapper {
 	padding-bottom: 3rem;
   }
-.skiplinks{
+.skip-links{
 	position: absolute;
 	z-index: 100;
 	top: 0;
@@ -90,7 +92,7 @@ header {
 	color: #fff;
 	
 }
-.assistive, .hotspotimage, button, span {
+.assistive, button, span {
 	display: none;
 }
 .main-nav ul {
@@ -135,6 +137,16 @@ cursor: pointer;
    line-height: 1.5802469136;
 	flex-grow: 1;
 	border: 0.05rem solid black;
+	background-color: white;
+}
+.search-input:hover {
+	transition-duration: 0.4s;
+	background-color: rgb(212, 214, 214);
+}
+.search-input:focus {
+	transition-duration: 0.4s;
+	background-color: rgb(189, 239, 239);
+	
 }
 .search-submit{
 	width: 48px;
@@ -159,7 +171,17 @@ cursor: pointer;
 	min-height: 280px;
 	
 }
-
+#top-menu a{
+	transition-duration: 0.4s;
+	border-radius:0.5rem ;
+}
+#top-menu a:hover{
+	background-color: azure;
+	opacity: 50%;
+	color: #01689b;
+	
+	transition-duration: 0.4s;
+}
 .header-image > .wrapper {
 	display: flex;
 	flex-basis: 100%;
@@ -228,9 +250,7 @@ li:not(:last-child) {
 	.article{
 		padding: 3rem 1rem 3rem;
 	}
-.wcag{
-	background-color: #39870D;
-}
+
 .site-footer{
 	justify-content: center;
 	align-items: center;
@@ -257,6 +277,19 @@ footer>.wrapper *{
 	color: #fff;
 	padding: 0 1rem 1.5rem;
 	margin-bottom: 2rem;
+}
+.site-footer a{
+	transition-duration: 0.4s;
+	padding: 0.5rem 0.25rem;
+	display: block;
+	border-radius:0.5rem ;
+}
+.site-footer a:hover{
+	background-color: azure;
+	
+	color: #01689b;
+	
+	transition-duration: 0.4s;
 }
 .column{
 	width: 50%;
@@ -382,6 +415,7 @@ footer>.wrapper *{
 		}
 		body{
 			margin: 0 auto;
+			
 		}
 		.nav-item{
 			width: 33%;
@@ -391,6 +425,6 @@ footer>.wrapper *{
 	@media  (min-width: 1200px)
 	{
 		html{
-			font-size: 24px;
+			font-size: 20px;
 			line-height: 1.5;
 		}
