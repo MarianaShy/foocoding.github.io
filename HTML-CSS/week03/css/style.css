@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@1&display=swap');
+@import url(./header.css);
+@import url(./header.css);
+@import url(./header.css);
 *{
 	margin: 0;
 	padding: 0;
@@ -34,13 +37,8 @@ header {
 #content-wrapper {
 	padding-bottom: 3rem;
   }
-.skip-links{
-	position: absolute;
-	z-index: 100;
-	top: 0;
-	left: 50%;
-	visibility: hidden;
-	padding: 0 16px;
+.skiplinks{
+	display: none;
 }
 .logo__wrapper{
 	margin-inline-start: calc(50% - 25px);
@@ -90,6 +88,7 @@ header {
 }
 .bread-crumb-nav a{
 	color: #fff;
+	font-size: 1.6rem;
 	
 }
 .assistive, button, span {
@@ -198,7 +197,7 @@ cursor: pointer;
 	
 }
 .header-image{
-	background: url(./source/verkiezing-tweede-kamer-2023-vrouw-met-stempotlood-hero-2\ \(min1250\).jpeg) center no-repeat;
+	background: url(../source/verkiezing-tweede-kamer-2023-vrouw-met-stempotlood-hero-2\ \(min1250\).jpeg) center no-repeat;
 	background-size: cover;
 }
 .top-task-navigation > h2{
@@ -269,7 +268,7 @@ footer>.wrapper{
 	justify-content: flex-start;
 	padding: 2rem 1rem;
 }
-footer>.wrapper *{
+footer>.wrapper a, h2{
 	color: #fff;
 }
 .payoff{
@@ -282,7 +281,6 @@ footer>.wrapper *{
 	transition-duration: 0.4s;
 	padding: 0.5rem 0.25rem;
 	display: block;
-	border-radius:0.5rem ;
 }
 .site-footer a:hover{
 	background-color: azure;
@@ -320,12 +318,15 @@ footer>.wrapper *{
 	flex-direction: row;
 	flex-wrap: wrap;
 }
+
 .languages__link {
-	display: inline-block;
-	padding: 0.5rem 1rem;
+	display: block;
+	padding: 20px;
+	margin: 0.4rem 0.8rem 0.4rem 0;
 	text-decoration: none;
 	border: 1px solid #01689b;
 	color: inherit;
+	border-radius: 0;
 }
 
 @media (min-width: 506px)
@@ -423,8 +424,7 @@ footer>.wrapper *{
 
 	}
 	@media  (min-width: 1200px)
-	{
-		html{
+		{html
 			font-size: 20px;
 			line-height: 1.5;
 		}
