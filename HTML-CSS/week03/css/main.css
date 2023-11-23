@@ -18,15 +18,18 @@
 	background-size: cover;
 }
 .top-task-navigation > h2{
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	margin: 0 0 1rem 0;
-	
+	color: black;
 }
 .top-task-navigation > ul{
 	margin-left: 1rem;
 }
-.top-task-navigation > a{
+.top-task-navigation a{
 	color: #01689b;
+}
+.top-task-navigation a:hover{
+	text-decoration: underline;
 }
 li:not(:last-child) {
 	margin: 0 0 0.5rem 0;
@@ -55,6 +58,9 @@ li:not(:last-child) {
 	font-weight: normal;
 	color: #01689b;
 	margin: 0rem 0rem 0.5rem 0rem;
+}
+.editorial-navigation h3:hover {
+	text-decoration: underline;
 }
 .editorial-navigation a{
    line-height: 1.3333333333;

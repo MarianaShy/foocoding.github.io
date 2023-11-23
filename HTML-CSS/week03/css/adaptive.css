@@ -9,6 +9,19 @@
 		.nav-item{
 			width: 50%;
 		}
+		.banner__flex{
+			width: 47%;
+		}
+		.banner__text{
+			font-size: 4vw;
+		}
+		.banner__highlighted-text{
+			font-size: 4vw;
+		}
+		.banner{
+			height: 30vw;
+			border: 0.4rem solid #cbd2e3;
+		}
 	}
 @media  (min-width: 767px)
 	{
@@ -91,10 +104,28 @@
 		.nav-item{
 			width: 33%;
 		}
-
+		.banner__flex{
+			width: 33%;
+			justify-content: flex-start;
+		}
+		.aside__flex{
+			justify-content: flex-start;
+		}
+		.banner__text{
+			font-size: 2vw;
+		}
+		.banner__highlighted-text{
+			font-size: 3vw;
+		}
+		.banner{
+			height: 18vw;
+			border: 0.2rem solid #cbd2e3;
+		}
 	}
 	@media  (min-width: 1200px)
-		{html
+		{
+			html{
 			font-size: 20px;
 			line-height: 1.5;
+			}
 		}

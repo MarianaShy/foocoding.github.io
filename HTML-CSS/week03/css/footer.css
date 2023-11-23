@@ -31,11 +31,8 @@ footer>.wrapper a, h2{
 	padding: 0.5rem 0.25rem;
 	display: block;
 }
-.site-footer a:hover{
-	background-color: azure;
-	
-	color: #01689b;
-	
+.column a:hover{
+	text-decoration: underline;
 	transition-duration: 0.4s;
 }
 .column{
@@ -76,4 +73,8 @@ footer>.wrapper a, h2{
 	border: 1px solid #01689b;
 	color: inherit;
 	border-radius: 0;
+}
+.languages__link:hover{
+	background-color: #01689b;
+	color: #333;
 }

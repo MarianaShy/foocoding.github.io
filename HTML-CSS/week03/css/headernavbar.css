@@ -62,9 +62,10 @@ header {
 	color: #fff;
 	font-size: 1.6rem;
 }
-.assistive, button, span {
+.assistive{
 	display: none;
 }
+
 .main-nav ul {
 	display: none;
 	overflow: hidden;
@@ -135,12 +136,10 @@ cursor: pointer;
 }
 #top-menu a{
 	transition-duration: 0.4s;
-	border-radius:0.5rem ;
+	padding: 0.7rem;
+	font-size: 1.3rem;
 }
 #top-menu a:hover{
-	background-color: azure;
-	opacity: 50%;
-	color: #01689b;
-	
+	text-decoration: underline;
 	transition-duration: 0.4s;
 }
