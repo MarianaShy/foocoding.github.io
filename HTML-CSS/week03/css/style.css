@@ -28,3 +28,27 @@ body{
 	max-width: 100%;
 	margin: 0 auto;
 }
+
+@media  (min-width: 767px)
+	{
+		html{
+			font-size: 16px;
+		}
+	}
+@media  (min-width: 999px)
+	{
+		html{
+			font-size: 18px;
+			line-height: 1.5;
+		}
+		body{
+			margin: 0 auto;
+		}
+	}
+@media  (min-width: 1200px)
+	{
+		html{
+			font-size: 16px;
+			line-height: 1.5;
+			}
+	}

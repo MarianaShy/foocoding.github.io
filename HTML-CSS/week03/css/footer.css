@@ -78,3 +78,13 @@ footer>.wrapper a, h2{
 	background-color: #01689b;
 	color: #333;
 }
+
+@media  (min-width: 767px)
+	{
+	.payoff{
+		flex: 0 0 50%
+	}
+	.column{
+		width: 25%;
+	}
+}

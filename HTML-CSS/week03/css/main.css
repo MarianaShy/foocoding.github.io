@@ -31,7 +31,7 @@
 .top-task-navigation a:hover{
 	text-decoration: underline;
 }
-li:not(:last-child) {
+.top-task-navigation li:not(:last-child) {
 	margin: 0 0 0.5rem 0;
 }
 .top-task-navigation{
@@ -50,10 +50,10 @@ li:not(:last-child) {
 }
 .nav-item{
 	margin-bottom: 1rem;
-	padding: 0 1rem 1rem;
+	padding: 0 0.5rem 1rem;
 }
 .editorial-navigation h3 {
-	font-size: 1.6018066406rem;
+	font-size: 1.2rem;
 	line-height: 1.2485901539;
 	font-weight: normal;
 	color: #01689b;
@@ -69,3 +69,65 @@ li:not(:last-child) {
 .article{
 		padding: 3rem 1rem 3rem;
 	}
+
+
+@media (min-width: 506px)
+	{
+		.four-items>ul{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		.nav-item{
+			width: 50%;
+		}
+		
+	}
+@media  (min-width: 767px)
+	{
+	
+	.main-nav ul {
+		display: flex;
+		overflow: visible;
+		margin: 1rem;
+		align-self: center;
+		align-content: center;
+		vertical-align: middle;
+   }
+	.top-task-navigation a{
+		padding-bottom: 0.5rem;
+		display: block;
+	}
+	
+	.main-nav a{
+		padding: 0.5rem 0.25rem;
+   	border: none;
+		color: #fff;
+	}
+	.header-image > .wrapper {
+		
+		flex-wrap: wrap;
+		max-width: 1200px;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 2rem 1rem 3rem;
+		position: relative;
+		z-index: 10;
+	}
+	
+	@media  (min-width: 999px)
+	{
+		.top-task-navigation {
+			flex-grow: 0;
+			flex-shrink: 0;
+			flex-basis: 45%;
+			max-width: 45%;
+			margin-left: 0;
+			margin-bottom: 0;
+		}
+		.nav-item{
+			width: 33%;
+		}
+		
+	}
+	
