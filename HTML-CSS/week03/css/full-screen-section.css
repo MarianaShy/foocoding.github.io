@@ -20,6 +20,10 @@
 	content: " ";
 	border-top: 1px solid #e1e1e1;
 }
+.posts__date{
+	font-weight: bold;
+	padding: 0.5rem 0;
+}
 .posts:after {
 	display: block;
 	width: 100%;
