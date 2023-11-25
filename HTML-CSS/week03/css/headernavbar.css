@@ -143,6 +143,9 @@ cursor: pointer;
 	text-decoration: underline;
 	transition-duration: 0.4s;
 }
+#top-menu a:active{
+	border: 0.15rem dashed black;
+}
 @media (min-width: 506px)
 	{
 		.four-items>ul{

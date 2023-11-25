@@ -4,14 +4,20 @@
 	margin-left: 1rem;
 	margin-right: 1rem;
 }
+
 .posts__title{
 	font-weight: bold;
 	font-size: 1.6rem;
 	color: black;
 	margin: 1rem 0;
 }
-.posts__subtitle:hover{
+.posts__subtitle:hover, .more:hover{
 	text-decoration: underline;
+	color: #01496d;
+}
+
+.posts__item:active, .more:active{
+	border: 0.15rem dashed black;
 }
 .posts:before {
 	display: block;
@@ -24,13 +30,7 @@
 	font-weight: bold;
 	padding: 0.5rem 0;
 }
-.posts:after {
-	display: block;
-	width: 100%;
-	margin:1rem 0;
-	content: " ";
-	border-top: 1px solid #e1e1e1;
-}
+
 .posts__flex{
 	display: flex;
 	flex-wrap: wrap;
@@ -55,6 +55,14 @@
 .posts__text{
 font-size: 0.9rem;
 }
+.more{
+	display: block;
+	color: #01689b;
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin: 2rem 0;
+}
+
 @media (min-width: 506px)
 	{
 		.posts__item{

@@ -31,6 +31,9 @@
 .top-task-navigation a:hover{
 	text-decoration: underline;
 }
+.top-task-navigation a:active{
+	border: 0.15rem dashed black;
+}
 .top-task-navigation li:not(:last-child) {
 	margin: 0 0 0.5rem 0;
 }
@@ -62,6 +65,7 @@
 .editorial-navigation h3:hover {
 	text-decoration: underline;
 }
+
 .editorial-navigation a{
    line-height: 1.3333333333;
    margin-bottom: 1rem;
@@ -127,6 +131,5 @@
 		}
 		.nav-item{
 			width: 33%;
+		}}
 		}
-		
-	}
