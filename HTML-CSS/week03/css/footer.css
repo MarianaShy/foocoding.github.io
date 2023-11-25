@@ -17,9 +17,10 @@ footer>.wrapper{
 	justify-content: flex-start;
 	padding: 2rem 1rem;
 }
-footer>.wrapper a, h2{
+footer>.wrapper a, footer >.wrapper h2{
 	color: #fff;
 }
+
 .payoff{
 	flex: 0 1 100%;
 	color: #fff;
