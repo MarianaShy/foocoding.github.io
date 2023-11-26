@@ -1,0 +1,62 @@
+.survey{
+	margin: 2rem 0;
+	align-self: start;
+	background-color: #39870c;
+	width: 100%;
+	color: white;
+	padding: 1.3rem 1.3rem 3rem 1.3rem;
+}
+.survey__flex{
+	display: flex;
+	flex-direction: column;
+}
+.survey__rating{
+	display: flex;
+	width: 100%;
+	border-radius: 0.3rem;
+	background-color: white;
+}
+.survey__rating li{
+	background-color: white;
+	flex-grow: 1;
+	font-size: 1.2rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
+	text-align: center;
+	border-radius: 0.3rem;
+}
+.survey__title{
+	font-weight: 400;
+	font-size: 1.3rem;
+	margin: 0.5rem 0 0.5rem 0;
+}
+.survey__text{
+	font-size: 1.2rem;
+	font-weight: 100;
+	line-height: 1.5;
+	margin-bottom: 2rem;
+}
+.survey__question{
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+}
+.survey__values{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0.4rem;
+	font-size: 0.8rem;
+}
+.survey__submit{
+	background-color: #01689b;
+	margin-top: 2rem;
+	padding: 1rem 2rem;
+	color: white;
+	font-size: 1.2rem;
+	border-radius: 0.3rem;
+	border: none;
+	box-shadow: 0px 1px 3px 0px rgb(74, 73, 73);
+}
+.button-container{
+	align-self: flex-end;
+	
+}
