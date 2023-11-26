@@ -58,5 +58,11 @@
 }
 .button-container{
 	align-self: flex-end;
-	
 }
+
+@media  (min-width: 767px)
+	{
+		.survey{
+			max-width: 66.6%;
+		}
+	}
