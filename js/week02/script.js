@@ -1,9 +1,9 @@
-/*
+
 console.log("Hello, World!") //English
 console.log("Hej, Världen!") //Swedish
 console.log("Привіт, Світ!") //Ukrainian
 console.log("Привет, Mир!") //Russian
-*/
+
 
 /*
 console.log("I'm awesome");
@@ -62,7 +62,7 @@ console.log("The value of my variable itIsSnowing is: " + itIsSnowing);
 let temperature = 4;
 console.log("The value of my variable temperature is: " + temperature);
 let nothing;
-console.log("The value of my variable nuthing is: " + nothing);
+console.log("The value of my variable nothing is: " + nothing);
 
 console.log("The type of my variable day is: string")
 console.log("The type of my variable date is: number")
@@ -89,4 +89,33 @@ if (typeof date === typeof temperature) {
 else {
   console.log('NOT THE SAME TYPE')
 }
+*/
+
+/*
+console.log("If x equals 7, and the only other statement is x = x % 3, than x = 1")
+console.log("If x equals 8, and the only other statement is x = x % 3, than x = 2")
+console.log("If x equals 9, and the only other statement is x = x % 3, than x = 0")
+*/
+
+/*
+let myArray = ["John", 28]
+if (typeof myArray[0] !== typeof myArray[1])  {
+  console.log("This array contains multiple data types.")
+}
+else{
+  console.log("This array does not contain multiple data types.")
+}
+console.log("You can store multiple data types in an array? Numbers and strings like in this example?")
+
+let g = 6/0
+let h = 10/0
+console.log(g)
+console.log(h)
+if (g === h){
+  console.log("true")
+}
+else{
+  console.log("false")
+}
+console.log("You can compare infinities. Eny numbers divided to 0 will be equal Infinity")
 */
