@@ -1,42 +1,42 @@
-
+//1
 console.log("Hello, World!") //English
 console.log("Hej, Världen!") //Swedish
 console.log("Привіт, Світ!") //Ukrainian
 console.log("Привет, Mир!") //Russian
 
 
-/*
+//2
 console.log("I'm awesome");
-*/
 
-/*
+
+//3
 let x
 console.log("the value of my variable x will be: undefined")
 console.log(x)
 x = 30
 console.log("the value of my variable x will be: 30")
 console.log(x)
-*/
 
-/*
+
+//4
 let y = ""
-console.log("the value of x will be: ''")
+console.log("the value of x will be empty")
 console.log(y)
 y = "Hello World!"
 console.log("the value of x will be: 'Hello World!'")
 console.log(y)
-*/
 
-/*
+
+//5
 const z = 7.25
 console.log(z)
 const a = Math.round(z)
 console.log(a)
 const f = Math.max(a, z)
 console.log(f)
-*/
 
-/*
+
+//6
 let dogNames = []
 console.log("I think the value of the array is: undefined")
 console.log(dogNames)
@@ -44,15 +44,16 @@ let myFavoriteAnimals = ["dog", "horse", "cat"]
 console.log(myFavoriteAnimals)
 myFavoriteAnimals.push ("baby pig")
 console.log(myFavoriteAnimals)
-*/
 
-/*let myString = "this is a test"
+
+//7
+let myString = "this is a test"
 console.log(myString)
 let myStringLength = myString.length
 console.log(myStringLength)
-*/
 
-/*
+
+//8
 let day = "Monday";
 console.log("The value of my variable day is: " + day);
 let date = 27;
@@ -89,15 +90,15 @@ if (typeof date === typeof temperature) {
 else {
   console.log('NOT THE SAME TYPE')
 }
-*/
 
-/*
+
+//9
 console.log("If x equals 7, and the only other statement is x = x % 3, than x = 1")
 console.log("If x equals 8, and the only other statement is x = x % 3, than x = 2")
 console.log("If x equals 9, and the only other statement is x = x % 3, than x = 0")
-*/
 
-/*
+
+//10
 let myArray = ["John", 28]
 if (typeof myArray[0] !== typeof myArray[1])  {
   console.log("This array contains multiple data types.")
@@ -118,4 +119,3 @@ else{
   console.log("false")
 }
 console.log("You can compare infinities. Eny numbers divided to 0 will be equal Infinity")
-*/
