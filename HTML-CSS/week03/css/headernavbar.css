@@ -99,7 +99,6 @@ cursor: pointer;
 }
 .search-input{
 	height: 48px;
-	width: calc();
 	padding: 0 5rem 0 1rem;
 	font-size: 1rem;
    line-height: 1.5802469136;
@@ -194,9 +193,7 @@ cursor: pointer;
    	border: none;
 		color: #fff;
 	}
-	.payoff{
-		flex: 0 0 50%
-	}
+	
 }
 	@media  (min-width: 999px)
 	{
