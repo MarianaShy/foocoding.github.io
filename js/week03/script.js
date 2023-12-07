@@ -49,19 +49,95 @@ sumOfThree (1, 2, 3)
  a color, and a code, 1 for car, 2 for motorbike. And prints
   'a blue motorbike' for example when called as vehicleType("blue", 2) */ 
 
-function vehicleType(color, code) {
-	if (code === 1) return "motorbike"
-	return "car";
-	console.log("a " + color + code)
+  function vehicleType(color, code) {
+	(code === 1) ? code = "motorbike" : code = "car";
+	console.log("a " + color + " " + code)
 }
 
 vehicleType("blue", 1)
 
-/*5. Can you write the following without the if statement, but with just as a single line with console.log(...);?
+/*5. Can you write the following without the if statement,
+ but with just as a single line with console.log(...);?
 if (3 === 3) {
   console.log("yes");
 } else {
   console.log("no");
 } */
-(3===3) ? console.log("yes") : console.log("no");
+let one = (3===3) ? console.log("yes") : console.log("no");
+
+/*6. Create a function called vehicle, like before, 
+but takes another parameter called age, so that
+ vehicle("blue", 1, 5) prints 'a blue used car' */
+
+ function vehicle(color, code, age) {
+	if (code === 1) { code = "motorbike"} 
+  else if (code === 2) {code = "car"}
+  (age === 0) ? age = "new" : age = "used"
+	console.log(`a ${color} ${age} ${code}`)
+}
+vehicle("blue", 1, 5)
+
+/*7. Make a list of vehicles, you can add "motorbike", "caravan", "bike", or more.*/
+let vehicles = ['motorbike', 'caravan', 'bike']
+//8.
+console.log(vehicles[2])
+//9.
+function vehicle(color, code, age) {
+	const vehicles = ['motorbike', 'caravan', 'bike'];
+	const vehicleType = vehicles[code - 1];
+	if (code === 1) { code = "motorbike"} 
+	else if (code === 2) {code = "car"}
+	(age <= 3) ? age = "new" : age = "used"
+	console.log("a " + color + " " + age + " " + vehicleType)
+}
+vehicle("green", 3, 1)
+
+//10
+function vehicleAdMessage(){
+	let addverticementMassage = "Amazing Joe's Garage, we service"
+	const vehicles = ['motorbike', 'caravan', 'bike', 'plane'];
+	for(let i=0; i < vehicles.length; i++){
+	  if( i === vehicles.length - 1) {
+		 addverticementMassage += ' and ' + vehicles[i] + 's'
+	  }
+	  else if (i === vehicles.length - vehicles.length){
+		 addverticementMassage += ' ' + vehicles[i] + 's'}
+	  else {
+	  addverticementMassage += ', ' + vehicles[i] + 's.'}
+	  }
+	  console.log(addverticementMassage)
+	  }
+ vehicleAdMessage()
+
+ //11
+ console.log("I can add more vehicle to the list without changing the code for question 10")
+ let vehicles11 = ['motorbike', 'caravan', 'bike', 'plane'];
+function vehicleAdMessage11(h){
+	let addverticementMassage = "Amazing Joe's Garage, we service"
+
+	for(let i=0; i < h.length; i++){
+	  if( i === h.length - 1) {
+		 addverticementMassage += ' and ' + h[i] + 's'
+	  }
+	  else if (i === h.length - h.length){
+		 addverticementMassage += ' ' + h[i] + 's'}
+	  else {
+	  addverticementMassage += ', ' + h[i] + 's.'}
+	  }
+	  console.log(addverticementMassage)
+	  }
+ vehicleAdMessage11(vehicles11)
+
+ //12
+ let newObject = {};
+
+ //13
+ let teachers = {
+	'module1': 
+	{name: 'Timmy'},
+	'module2':
+	{name: 'Seif'},
+	'module3': 
+	{name: 'Sahin'}
+};
 
