@@ -21,7 +21,7 @@ console.log ('The item you are looking for is at index: '  + favoriteAnimals.ind
 //More JavaScript 
 //1
 function sumOfThree (a, b, c) {
-	return  a + b + c;
+	console.log(a + b + c);
 }
 sumOfThree (1, 2, 3)
 
@@ -32,6 +32,36 @@ sumOfThree (1, 2, 3)
  }
  colorCar("red");
 
- //3
+ /*3. Create an object and a function that takes the 
+ object as a parameter and prints out all of its properties and values.*/
 
- 
+ function getTheObject(object) {
+	console.log(object);
+ }
+ let myObject = {
+	name: "Karl",
+	day: "Friday"
+ }
+ getTheObject(myObject);
+
+
+ /*4. Create a function named vehicleType that receives 
+ a color, and a code, 1 for car, 2 for motorbike. And prints
+  'a blue motorbike' for example when called as vehicleType("blue", 2) */ 
+
+function vehicleType(color, code) {
+	if (code === 1) return "motorbike"
+	return "car";
+	console.log("a " + color + code)
+}
+
+vehicleType("blue", 1)
+
+/*5. Can you write the following without the if statement, but with just as a single line with console.log(...);?
+if (3 === 3) {
+  console.log("yes");
+} else {
+  console.log("no");
+} */
+(3===3) ? console.log("yes") : console.log("no");
+
