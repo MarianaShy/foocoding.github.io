@@ -23,7 +23,15 @@ console.log ('The item you are looking for is at index: '  + favoriteAnimals.ind
 function sumOfThree (a, b, c) {
 	return  a + b + c;
 }
-	sumOfThree (1, 2, 3)
+sumOfThree (1, 2, 3)
 
  //2
 
+ function colorCar(color) {
+	console.log('a ' + color + ' car');
+ }
+ colorCar("red");
+
+ //3
+
+ 
