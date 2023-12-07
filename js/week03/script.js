@@ -139,5 +139,41 @@ function vehicleAdMessage11(h){
 	{name: 'Seif'},
 	'module3': 
 	{name: 'Sahin'}
-};
+}
+//14
+teachers.module1['language'] = 'HTML/CSS/Git';
+teachers.module2['language'] = 'CSS';
+teachers.module3['language'] = 'JS';
+console.log(teachers)
+//15
+
+let x = [1, 2, 3];
+let y = [1, 2, 3];
+let z = y;
+
+(z == y) ? console.log(true) : console.log(false)
+(z === y) ? console.log(true) : console.log(false)
+console.log('Output is true');
+(x == y) ? console.log(true) : console.log(false)
+(x === y) ? console.log(true) : console.log(false)
+console.log('Output is false')  
+
+//16
+let o1 = { foo: "bar" };
+let o2 = { foo: "bar" };
+let o3 = o2;
+o2['foo'] = "goo";
+console.log(o2);
+console.log(o3);
+consol.log('changing o2 changes o3');
+o1['foo'] = "boo";
+console.log(o1);
+console.log(o2);
+consol.log('changing o1 does not change o2')
+
+//17
+
+let bar = 42;
+typeof typeof bar;
+console.log('typeof bar returns "number" which is a string itself. Thats why typeof typeof bar is a string')
 
