@@ -106,8 +106,11 @@ const bookPropertiesList = {
 	function generateDetailedBookList(bookPropertiesList) {
 		const listForBooks = document.createElement('ul');
 
-		for (const title in bookPropertiesList) {
-			console.log(title);
+		for (const element in bookPropertiesList) {
+			const bookTitle = document.createElement('h2');
+      bookTitle.textContent = 1;
+      console.log(bookPropertiesList[element].title);
+      listForBooks.appendChild(bookTitle);
 		}
 		}
 		
