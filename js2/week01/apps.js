@@ -1,4 +1,5 @@
 
+"use strict"
 /*
 function generateBookList(bookList) {
 	const ulForBooks = document.createElement('ul');
@@ -105,17 +106,35 @@ const bookPropertiesList = {
 
 	function generateDetailedBookList(bookPropertiesList) {
 		const listForBooks = document.createElement('ul');
+		document.body.appendChild(listForBooks);
 
 		for (const element in bookPropertiesList) {
 			const bookTitle = document.createElement('h2');
-      bookTitle.textContent = 1;
-      console.log(bookPropertiesList[element].title);
-      listForBooks.appendChild(bookTitle);
+      	bookTitle.textContent = bookPropertiesList[element].title;
+			listForBooks.appendChild(bookTitle);
+
+			const bookAuthor = document.createElement('p');
+      	bookAuthor.textContent = bookPropertiesList[element].author;
+			listForBooks.appendChild(bookAuthor);
+
+			const bookGenres = document.createElement('p');
+      	bookGenres.textContent = bookPropertiesList[element].genres;
+			listForBooks.appendChild(bookGenres);
+
+			const bookLanguage = document.createElement('p');
+      	bookLanguage.textContent = bookPropertiesList[element].language;
+			listForBooks.appendChild(bookLanguage);
+
+			const bookPublished = document.createElement('p');
+      	bookPublished.textContent = bookPropertiesList[element].first_published;
+			listForBooks.appendChild(bookPublished);
+
+			console.log(bookPropertiesList[element].title);
 		}
 		}
 		
 		
 
 
-	const generatedDetailedBookList = generateDetailedBookList(bookPropertiesList);
+	generateDetailedBookList(bookPropertiesList);
 	
