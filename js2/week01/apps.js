@@ -106,29 +106,35 @@ const bookPropertiesList = {
 
 	function generateDetailedBookList(bookPropertiesList) {
 		const listForBooks = document.createElement('ul');
+		listForBooks.classList.add('book-list__flex');
 		document.body.appendChild(listForBooks);
 
+
 		for (const element in bookPropertiesList) {
+			const bookItem = document.createElement('li');
+			bookItem.classList.add('book-item');
+
 			const bookTitle = document.createElement('h2');
       	bookTitle.textContent = bookPropertiesList[element].title;
-			listForBooks.appendChild(bookTitle);
+			bookItem.appendChild(bookTitle);
 
 			const bookAuthor = document.createElement('p');
       	bookAuthor.textContent = bookPropertiesList[element].author;
-			listForBooks.appendChild(bookAuthor);
+			bookItem.appendChild(bookAuthor);
 
 			const bookGenres = document.createElement('p');
       	bookGenres.textContent = bookPropertiesList[element].genres;
-			listForBooks.appendChild(bookGenres);
+			bookItem.appendChild(bookGenres);
 
 			const bookLanguage = document.createElement('p');
       	bookLanguage.textContent = bookPropertiesList[element].language;
-			listForBooks.appendChild(bookLanguage);
+			bookItem.appendChild(bookLanguage);
 
 			const bookPublished = document.createElement('p');
       	bookPublished.textContent = bookPropertiesList[element].first_published;
-			listForBooks.appendChild(bookPublished);
+			bookItem.appendChild(bookPublished);
 
+			listForBooks.appendChild(bookItem);
 			console.log(bookPropertiesList[element].title);
 		}
 		}
