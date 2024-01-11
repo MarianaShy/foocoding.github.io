@@ -166,23 +166,3 @@ const bookPropertiesList = {
 			}
 	  	}
 		addCovers(bookCovers);
-
-		let bookLinks = {
-			a_tree_grows_in_brooklyn: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
-			fried_green_tomatoes_at_the_whistle_stop_cafe: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
-			harry_potter_and_the_prisoner_of_azkaban: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
-			harry_potter_and_the_sorcerers_stone: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
-			harry_potter_and_the_order_of_the_phoenix: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
-			harry_potter_and_the_deathly_hallows: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
-			harry_potter_and_the_goblet_of_fire: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
-			harry_potter_and_the_half_blood_prince: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
-			bli_din_egen_bästa_vän:'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
-			ella_gör_sig_fri: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)'
-		}
-
-		function addLinks (linksList) {
-			for(let element in linksList){
-				
-			}
-		}
-		addLinks(bookLinks)
