@@ -111,36 +111,78 @@ const bookPropertiesList = {
 
 
 		for (const element in bookPropertiesList) {
+			
 			const bookItem = document.createElement('li');
-			bookItem.classList.add('book-item');
-
 			const bookTitle = document.createElement('h2');
-      	bookTitle.textContent = bookPropertiesList[element].title;
-			bookItem.appendChild(bookTitle);
-
 			const bookAuthor = document.createElement('p');
-      	bookAuthor.textContent = bookPropertiesList[element].author;
-			bookItem.appendChild(bookAuthor);
-
 			const bookGenres = document.createElement('p');
-      	bookGenres.textContent = bookPropertiesList[element].genres;
-			bookItem.appendChild(bookGenres);
-
 			const bookLanguage = document.createElement('p');
-      	bookLanguage.textContent = bookPropertiesList[element].language;
-			bookItem.appendChild(bookLanguage);
-
 			const bookPublished = document.createElement('p');
+			
+			bookItem.classList.add('book-item');
+			bookItem.id = element;
+
+      	bookTitle.textContent = bookPropertiesList[element].title;
+      	bookAuthor.textContent = bookPropertiesList[element].author;
+      	bookGenres.textContent = bookPropertiesList[element].genres;
+      	bookLanguage.textContent = bookPropertiesList[element].language;
       	bookPublished.textContent = bookPropertiesList[element].first_published;
-			bookItem.appendChild(bookPublished);
 
-			listForBooks.appendChild(bookItem);
-			console.log(bookPropertiesList[element].title);
+			bookItem.append(bookTitle, bookAuthor, bookGenres, bookLanguage, bookPublished);
+			listForBooks.append(bookItem);
+			
 		}
 		}
+	
 		
-		
-
-
 	generateDetailedBookList(bookPropertiesList);
 	
+
+
+		let bookCovers = {
+			a_tree_grows_in_brooklyn: './img/1.jpg',
+			fried_green_tomatoes_at_the_whistle_stop_cafe: './img/4.jpg',
+			harry_potter_and_the_prisoner_of_azkaban: './img/2.jpg',
+			harry_potter_and_the_sorcerers_stone: './img/5.jpg',
+			harry_potter_and_the_order_of_the_phoenix: './img/3.jpg',
+			harry_potter_and_the_deathly_hallows: './img/7.jpg',
+			harry_potter_and_the_goblet_of_fire: './img/10.jpg',
+			harry_potter_and_the_half_blood_prince: './img/8.jpg',
+			bli_din_egen_bästa_vän:'./img/6.jpg',
+			ella_gör_sig_fri: './img/9.jpg'
+		}
+
+		
+		function addCovers(coversList) {
+			for (let element in coversList) {
+				const book = document.querySelector(`#${element}`)
+				const bookCover = document.createElement('img')
+
+				bookCover.classList.add('book-cover');
+				
+				book.prepend(bookCover);
+				bookCover.src = coversList[element];
+				
+			}
+	  	}
+		addCovers(bookCovers);
+
+		let bookLinks = {
+			a_tree_grows_in_brooklyn: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
+			fried_green_tomatoes_at_the_whistle_stop_cafe: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
+			harry_potter_and_the_prisoner_of_azkaban: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
+			harry_potter_and_the_sorcerers_stone: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
+			harry_potter_and_the_order_of_the_phoenix: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
+			harry_potter_and_the_deathly_hallows: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
+			harry_potter_and_the_goblet_of_fire: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
+			harry_potter_and_the_half_blood_prince: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
+			bli_din_egen_bästa_vän:'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)',
+			ella_gör_sig_fri: 'https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)'
+		}
+
+		function addLinks (linksList) {
+			for(let element in linksList){
+				
+			}
+		}
+		addLinks(bookLinks)
