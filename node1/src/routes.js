@@ -1,7 +1,7 @@
 import { defineRoute, router } from './utils/define-route.js'
 
-defineRoute('GET', '/users', (req, res) => {
-  res.setHeader('Content-Type', 'application/json')
+defineRoute('GET', '/users', (req, res) => {	
+	res.setHeader('Content-Type', 'application/json')
   res.statusCode = 200
   res.end(JSON.stringify({
     message: 'GET /users/ matched'
