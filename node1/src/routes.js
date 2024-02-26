@@ -1,12 +1,15 @@
 import { defineRoute, router } from './utils/define-route.js'
 import getCounter from './utils/get-counter.js';
-import getUsers from './utils/get-users.js';
+import { getUsers, saveUsers } from './utils/get-users.js';
 
 
 
 
-let users = JSON.parse(await getUsers(process.cwd() + '/data/users.json'));
+
+let users = await getUsers(process.cwd() + '/data/users.json');
+
 let userId = getCounter(users[users.length - 1].id) 
+
 
 defineRoute('GET', '/users', (req, res) => {
 	const usersObject = users.reduce((acc, item) => {
@@ -21,7 +24,7 @@ defineRoute('GET', '/users', (req, res) => {
 	else {
 		res.writeHead(404, {'Content-Type': 'application/json'})
 		console.log(userId)
-		res.end(JSON.stringify('There are no users existing '))
+		res.end()
 	}
 })
 
@@ -36,7 +39,7 @@ defineRoute('GET', '/users/:id', (req, res) => {
 		if(!user)	{
 			
 			res.writeHead(404, {'Content-Type': 'application/json'})
-			res.end(JSON.stringify({message: `User ${userId} is not found`}))
+			res.end()
 		}
 		else {
 			res.writeHead(200, {'Content-Type': 'application/json'})
@@ -48,21 +51,23 @@ defineRoute('GET', '/users/:id', (req, res) => {
 
 
 defineRoute('POST', '/users', (req, res) => {
-
-	//fake data
-	req.body = {
-		login: 'Albus',
-		mail: 'albus.dumbledore@gmail.com'
-	}
-	const newUserId = 5;
-
-	const {login, mail} = req.body;
-	let newUser = {id: newUserId, login: login, mail: mail};
-
+	const newUserId = userId();
+if(!req.body.login || !req.body.email){
+	res.writeHead(400, {'Content-Type': 'application/json'})
+	res.end()
+	return
+}
+else if (req.body.login && req.body.email) {
+	const {login, email} = req.body;
+	let newUser = {id: newUserId, login: login, email: email};
 	users.push(newUser)
+	saveUsers('./data/users.json', users)
 	res.writeHead(201, {'Content-Type': 'application/json'})
-	res.end(JSON.stringify({message: `New user ${newUser.login} was created`}))
+	res.end(JSON.stringify(newUser))
+	return
+}
 })
+
 
 
 
