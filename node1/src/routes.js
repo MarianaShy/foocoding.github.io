@@ -1,6 +1,6 @@
 import { defineRoute, router } from './utils/define-route.js'
 import getCounter from './utils/get-counter.js';
-import { getUsers, saveUsers } from './utils/get-users.js';
+import { getUsers, saveUsers} from './utils/get-users.js';
 
 
 
@@ -89,6 +89,7 @@ defineRoute('PATCH', '/users/:id', (req, res) => {
 		else {
 			if (login) users[userId].login = login;
 			if (mail) users[userId].mail = mail;
+			saveUsers('./data/users.json', users)
 
 			res.writeHead(200, {'Content-Type': 'application/json'})
 			res.end(JSON.stringify({message: `User with ID:${userId} was updated`}))
@@ -115,7 +116,7 @@ defineRoute('DELETE', '/users/:id', (req, res) => {
 		else {
 			users.splice(userId, 1);
 
-
+			saveUsers('./data/users.json', users)
 			res.writeHead(200, {'Content-Type': 'application/json'})
 			res.end(JSON.stringify({message: `User with ID:${userId} was deleted`}))
 		}

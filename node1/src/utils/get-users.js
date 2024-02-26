@@ -13,10 +13,11 @@ async function getUsers(file) {
 async function saveUsers(file, users) {
     try {
         await fs.writeFile(file, JSON.stringify(users));
-        console.log('User saved successfully');
     } catch (error) {
         throw new Error(error);
     }
 }
+
+
 
 export { getUsers, saveUsers };
