@@ -1,0 +1,38 @@
+[
+	{
+	  "id": 1,
+	  "title": "The Philosopher's Stone",
+	  "author": "J.K. Rowling",
+	  "content": "The Philosopher's Stone is the first book in the Harry Potter series.",
+	  "published_at": "2001-06-26"
+	},
+	{
+	  "id": 2,
+	  "title": "The Chamber of Secrets",
+	  "author": "J.K. Rowling",
+	  "content": "The Chamber of Secrets is the second book in the Harry Potter series.",
+	  "published_at": "2002-07-02"
+	},
+	{
+	  "id": 3,
+	  "title": "The Prisoner of Azkaban",
+	  "author": "J.K. Rowling",
+	  "content": "The Prisoner of Azkaban is the third book in the Harry Potter series.",
+	  "published_at": "2003-07-08"
+	},
+	{
+	  "id": 4,
+	  "title": "The Goblet of Fire",
+	  "author": "J.K. Rowling",
+	  "content": "The Goblet of Fire is the fourth book in the Harry Potter series.",
+	  "published_at": "2004-07-08"
+	},
+	{
+	  "id": 5,
+	  "title": "The Order of the Phoenix",
+	  "author": "J.K. Rowling",
+	  "content": "The Order of the Phoenix is the fifth book in the Harry Potter series.",
+	  "published_at": "2005-06-21"
+	}
+ ]
+ 

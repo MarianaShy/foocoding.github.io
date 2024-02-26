@@ -1,0 +1,29 @@
+[
+	{
+	  "id": 1,
+	  "login": "harry_potter",
+	  "email": "harry_potter@example.com"
+	},
+	{
+	  "id": 2,
+	  "login": "hermione_granger",
+	  "email": "hermione_granger@example.com"
+	},
+	{
+	  "id": 3,
+	  "login": "ron_weasley",
+	  "email": "ron_weasley@example.com"
+	},
+	{
+	  "id": 4,
+	  "login": "albus_dumbledore",
+	  "email": "albus_dumbledore@example.com"
+	},
+	{
+	  "id": 5,
+	  "login": "severus_snape",
+	  "email": "severus_snape@example.com"
+	}
+ ]
+ 
+ 

@@ -1,14 +1,12 @@
 import { defineRoute, router } from './utils/define-route.js'
+import getCounter from './utils/get-counter.js';
+import getUsers from './utils/get-users.js';
 
-//---------------users---------------
-//fake data
-let users = [
-		{id:1, login:'Harry', email:'harry.potter@gmail.com'},
-		{id:2, login:'Ron', email:'ron.wisley@gmail.com'},
-		{id:3, login:'Luna', email:'luna.lovegood@gmail.com'},
-		{id:4, login:'Hermione', email:'hermione.granger@gmail.com'}
- ] ;
 
+
+
+let users = JSON.parse(await getUsers(process.cwd() + '/data/users.json'));
+let userId = getCounter(users[users.length - 1].id) 
 
 defineRoute('GET', '/users', (req, res) => {
 	const usersObject = users.reduce((acc, item) => {
@@ -22,7 +20,8 @@ defineRoute('GET', '/users', (req, res) => {
 	}
 	else {
 		res.writeHead(404, {'Content-Type': 'application/json'})
-		res.end(JSON.stringify('There are no users existing'))
+		console.log(userId)
+		res.end(JSON.stringify('There are no users existing '))
 	}
 })
 
