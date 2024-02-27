@@ -10,6 +10,8 @@ let users = await getUsers(process.cwd() + '/data/users.json');
 let posts = await getUsers(process.cwd() + '/data/posts.json')
 
 let userId = getCounter(users[users.length - 1].id) 
+let postId = getCounter(posts[posts.length - 1].id) 
+
 
 
 defineRoute('GET', '/users', (req, res) => getAll(req, res, users));
@@ -32,43 +34,28 @@ function getAll (req, res, items) {
 	}
 }
 
-defineRoute('GET', '/posts', (req, res) => {
-	const postsObject = posts.reduce((acc, item) => {
-		acc[item.id] = item;
-		return acc;
-	}, {});
+
+
+defineRoute('GET', '/users/:id', (req, res) => getById(req, res, users));
+defineRoute('GET', '/posts/:id', (req, res) => getById(req, res, posts));
+
+
+function getById (req, res, items) {
+	const itemsId = parseInt(req.params.id);
+   let item = items.find((item) => item.id === itemsId);
 	
-	if(typeof posts === 'object' && Object.keys(posts).length > 0)	{
-		res.writeHead(200, {'Content-Type': 'application/json'})
-		res.end(JSON.stringify(postsObject))
-	}
-	else {
-		res.writeHead(404, {'Content-Type': 'application/json'})
-		res.end()
-	}
-})
-
-
-
-
-defineRoute('GET', '/users/:id', (req, res) => {
-	
-	const { url } = req;
-	if (url.startsWith('/users/')) {
-		const userId = url.split('/')[2];
-		const user = users[userId];
-
-		if(!user)	{
+		if(!item)	{
 			
 			res.writeHead(404, {'Content-Type': 'application/json'})
 			res.end()
 		}
 		else {
 			res.writeHead(200, {'Content-Type': 'application/json'})
-			res.end(JSON.stringify(users[userId]))
+			res.end(JSON.stringify(item))
 		}
 }
-})
+
+
 
 
 
@@ -86,6 +73,24 @@ else if (req.body.login && req.body.email) {
 	saveUsers('./data/users.json', users)
 	res.writeHead(201, {'Content-Type': 'application/json'})
 	res.end(JSON.stringify(newUser))
+	return
+}
+})
+
+defineRoute('POST', '/posts', (req, res) => {
+	const newPostId = postId();
+if(!req.body.title || !req.body.author || !req.body.content || !req.body.published_at ){
+	res.writeHead(400, {'Content-Type': 'application/json'})
+	res.end()
+	return
+}
+else if (req.body.title && req.body.author && req.body.content && req.body.published_at) {
+	const {title, author, content, published_at} = req.body;
+	let newPost = {id: newPostId, title: title, content: content, author: author, published_at: published_at, };
+	posts.push(newPost)
+	saveUsers('./data/posts.json', posts)
+	res.writeHead(201, {'Content-Type': 'application/json'})
+	res.end(JSON.stringify(newPost))
 	return
 }
 })
