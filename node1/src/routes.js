@@ -136,7 +136,7 @@ defineRoute('PATCH', '/posts/:id', (req, res) => {
 		}
 })
 
-defineRoute('DELETE', '/posts/:id', (req, res) => deleteItem(req, res, posts));
+defineRoute('DELETE', '/posts/:id', (req, res) => deletePosts(req, res, posts));
 
 defineRoute('DELETE', '/users/:id', (req, res) => deleteItem(req, res, users));
 
@@ -150,12 +150,26 @@ function deleteItem (req, res, items) {
 		}
 		else {
 			items.splice(item, 1);
-			saveUsers('./data/users.json', items)
+			saveUsers(`./data/users.json`, items)
 			res.writeHead(200, {'Content-Type': 'application/json'})
 			res.end(JSON.stringify({message: `Deleted!`}))
 		}
 	}
+	function deletePosts (req, res, items) {
+		const itemsId = parseInt(req.params.id)
+		let item = items.find((item) => item.id === itemsId)
 	
+			if(!item)	{
+				res.writeHead(404, {'Content-Type': 'application/json'})
+				res.end(JSON.stringify({message: `User not found`}))
+			}
+			else {
+				items.splice(item, 1);
+				saveUsers(`./data/posts.json`, items)
+				res.writeHead(200, {'Content-Type': 'application/json'})
+				res.end(JSON.stringify({message: `Deleted!`}))
+			}
+		}
 
 
 
