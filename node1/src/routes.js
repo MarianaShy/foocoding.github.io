@@ -7,26 +7,48 @@ import { getUsers, saveUsers} from './utils/get-users.js';
 
 
 let users = await getUsers(process.cwd() + '/data/users.json');
+let posts = await getUsers(process.cwd() + '/data/posts.json')
 
 let userId = getCounter(users[users.length - 1].id) 
 
 
-defineRoute('GET', '/users', (req, res) => {
-	const usersObject = users.reduce((acc, item) => {
+defineRoute('GET', '/users', (req, res) => getAll(req, res, users));
+defineRoute('GET', '/posts', (req, res) => getAll(req, res, posts));
+
+
+function getAll (req, res, items) {
+	const itemsObject = items.reduce((acc, item) => {
 		acc[item.id] = item;
 		return acc;
 	}, {});
 	
-	if(typeof users === 'object' && Object.keys(users).length > 0)	{
+	if(typeof items === 'object' && Object.keys(items).length > 0)	{
 		res.writeHead(200, {'Content-Type': 'application/json'})
-		res.end(JSON.stringify(usersObject))
+		res.end(JSON.stringify(itemsObject))
 	}
 	else {
 		res.writeHead(404, {'Content-Type': 'application/json'})
-		console.log(userId)
+		res.end()
+	}
+}
+
+defineRoute('GET', '/posts', (req, res) => {
+	const postsObject = posts.reduce((acc, item) => {
+		acc[item.id] = item;
+		return acc;
+	}, {});
+	
+	if(typeof posts === 'object' && Object.keys(posts).length > 0)	{
+		res.writeHead(200, {'Content-Type': 'application/json'})
+		res.end(JSON.stringify(postsObject))
+	}
+	else {
+		res.writeHead(404, {'Content-Type': 'application/json'})
 		res.end()
 	}
 })
+
+
 
 
 defineRoute('GET', '/users/:id', (req, res) => {
