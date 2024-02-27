@@ -99,58 +99,63 @@ else if (req.body.title && req.body.author && req.body.content && req.body.publi
 
 
 defineRoute('PATCH', '/users/:id', (req, res) => {
-	const { url } = req;
-	let updatedUser = {login:'Sirius', email:'sirius.black@gmail.com'};
-	const {login, mail} = updatedUser;
-
-
-	if (url.startsWith('/users/')) {
-		const userId = parseInt(url.split('/')[2]); 
-		const user = users[userId];
-
+	const userId = parseInt(req.params.id);
+   let user = users.find((user) => user.id === userId);
+	const {login, email} = req.body;
 
 		if(!user)	{
 			res.writeHead(404, {'Content-Type': 'application/json'})
-			res.end(JSON.stringify({message: `User with ID:${userId} is not found`}))
+			res.end(JSON.stringify({message: `User  not found`}))
 		}
 		else {
-			if (login) users[userId].login = login;
-			if (mail) users[userId].mail = mail;
+			if (login) user.login = login;
+			if (email) user.email = email;
 			saveUsers('./data/users.json', users)
 
 			res.writeHead(200, {'Content-Type': 'application/json'})
-			res.end(JSON.stringify({message: `User with ID:${userId} was updated`}))
+			res.end(JSON.stringify(user))
 		}
-	}
-	
 })
 
 
+defineRoute('PATCH', '/posts/:id', (req, res) => {
+	const postsId = parseInt(req.params.id);
+   let post = posts.find((post) => post.id === postsId);
+	const {content} = req.body;
 
-
-defineRoute('DELETE', '/users/:id', (req, res) => {
-	const {url} = req;
-
-	if (url.startsWith('/users/')) {
-		const userId = parseInt(url.split('/')[2]); 
-		const user = users[userId];
-
-
-		if(!user)	{
+		if(!post)	{
 			res.writeHead(404, {'Content-Type': 'application/json'})
-			res.end(JSON.stringify({message: `User with ID:${userId} is not found`}))
+			res.end(JSON.stringify({message: `User  not found`}))
 		}
 		else {
-			users.splice(userId, 1);
+			if (content) post.content = content;
+			saveUsers('./data/posts.json', posts)
 
-			saveUsers('./data/users.json', users)
 			res.writeHead(200, {'Content-Type': 'application/json'})
-			res.end(JSON.stringify({message: `User with ID:${userId} was deleted`}))
+			res.end(JSON.stringify(post))
+		}
+})
+
+defineRoute('DELETE', '/posts/:id', (req, res) => deleteItem(req, res, posts));
+
+defineRoute('DELETE', '/users/:id', (req, res) => deleteItem(req, res, users));
+
+function deleteItem (req, res, items) {
+	const itemsId = parseInt(req.params.id)
+	let item = items.find((item) => item.id === itemsId)
+
+		if(!item)	{
+			res.writeHead(404, {'Content-Type': 'application/json'})
+			res.end(JSON.stringify({message: `User not found`}))
+		}
+		else {
+			items.splice(item, 1);
+			saveUsers('./data/users.json', items)
+			res.writeHead(200, {'Content-Type': 'application/json'})
+			res.end(JSON.stringify({message: `Deleted!`}))
 		}
 	}
 	
-
-})
 
 
 
