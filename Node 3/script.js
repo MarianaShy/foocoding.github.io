@@ -8,11 +8,12 @@ const fs = require('fs');
 	let minAge = Infinity;
 	let maxAge = -Infinity;
 	let professionsSalary = {};
+	 
 
 
 
 
-	const readStream = fs.createReadStream(process.env.FILE_ADDRESS_CSV);
+	const readStream = fs.createReadStream("users-data.csv");
 	let streamContainer = '';
 
 
@@ -69,7 +70,6 @@ result = `Total Salary: ${totalSalary}\nAverage Salary: ${averageSalary}\n`;
 Object.entries(professionsSalary).forEach(([profession, stats]) => {
 	result += `${profession.toUpperCase()} have the Minimum Salary: ${stats.minSalary}\n${profession.toUpperCase()} have the Maximum Salary: ${stats.maxSalary}\n`;
 });
-
 result += `Minimal age: ${minAge}\nMaximal age: ${maxAge}`
 
 
