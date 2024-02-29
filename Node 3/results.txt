@@ -3,7 +3,6 @@ Total Salary: 699998185
 Average Salary: 70006.8191819182
 Minimal age: 20
 Maximal age: 70
-Profession-wise Salary Statistics:
 doctor: Min Salary - 40004, Max Salary - 99998
 developer: Min Salary - 40019, Max Salary - 99987
 police officer: Min Salary - 40049, Max Salary - 99984

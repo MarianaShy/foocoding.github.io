@@ -12,7 +12,7 @@ const fs = require('fs');
 
 
 
-	const readStream = fs.createReadStream(process.env.FILE_ADDRESS_CSV);
+	const readStream = fs.createReadStream("users-data.csv");
 	let streamContainer = '';
 
 
@@ -68,11 +68,6 @@ const fs = require('fs');
 
 
 
-
-
-
-// Append profession-wise salary statistics to the result
-result += 'Profession-wise Salary Statistics:\n';
 Object.entries(professionsSalary).forEach(([profession, stats]) => {
 	 result += `${profession}: Min Salary - ${stats.minSalary}, Max Salary - ${stats.maxSalary}\n`;
 });
