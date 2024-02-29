@@ -1,10 +1,14 @@
-
 Total Salary: 699998185
 Average Salary: 70006.8191819182
+DOCTOR have the Minimum Salary: 40004
+DOCTOR have the Maximum Salary: 99998
+DEVELOPER have the Minimum Salary: 40019
+DEVELOPER have the Maximum Salary: 99987
+POLICE OFFICER have the Minimum Salary: 40049
+POLICE OFFICER have the Maximum Salary: 99984
+FIREFIGHTER have the Minimum Salary: 40001
+FIREFIGHTER have the Maximum Salary: 99987
+WORKER have the Minimum Salary: 40015
+WORKER have the Maximum Salary: 99983
 Minimal age: 20
 Maximal age: 70
-doctor: Min Salary - 40004, Max Salary - 99998
-developer: Min Salary - 40019, Max Salary - 99987
-police officer: Min Salary - 40049, Max Salary - 99984
-firefighter: Min Salary - 40001, Max Salary - 99987
-worker: Min Salary - 40015, Max Salary - 99983

@@ -18,5 +18,10 @@ Minimun age: XX
 Maximum age: XX
 
 
+terminal
 
  set FILE_ADDRESS_CSV="users-data.csv" 
+
+ js
+ 
+ process.env.FILE_ADDRESS_CSV

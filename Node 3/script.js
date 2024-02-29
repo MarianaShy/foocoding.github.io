@@ -64,13 +64,13 @@ const fs = require('fs');
 	readStream.on('end', () => {
 	const averageSalary = totalEntries === 0 ? 0 : totalSalary / totalEntries;
 
-	result = `\nTotal Salary: ${totalSalary}\nAverage Salary: ${averageSalary}\nMinimal age: ${minAge}\nMaximal age: ${maxAge}\n`;
-
-
+result = `Total Salary: ${totalSalary}\nAverage Salary: ${averageSalary}\n`;
 
 Object.entries(professionsSalary).forEach(([profession, stats]) => {
-	 result += `${profession}: Min Salary - ${stats.minSalary}, Max Salary - ${stats.maxSalary}\n`;
+	result += `${profession.toUpperCase()} have the Minimum Salary: ${stats.minSalary}\n${profession.toUpperCase()} have the Maximum Salary: ${stats.maxSalary}\n`;
 });
+
+result += `Minimal age: ${minAge}\nMaximal age: ${maxAge}`
 
 
 
