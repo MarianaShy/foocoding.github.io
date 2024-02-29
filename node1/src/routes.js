@@ -97,12 +97,16 @@ else if (req.body.title && req.body.author && req.body.content && req.body.publi
 
 
 
-
 defineRoute('PATCH', '/users/:id', (req, res) => {
-	const userId = parseInt(req.params.id);
-   let user = users.find((user) => user.id === userId);
-	const {login, email} = req.body;
-
+	if (!req.body.login && !req.body.email) {
+		res.writeHead(404, {'Content-Type': 'application/json'})
+		res.end(JSON.stringify({message: `Required fields are missing`}))
+	}
+	else {
+		
+		const userId = parseInt(req.params.id);
+		let user = users.find((user) => user.id === userId);
+		const {login, email} = req.body;
 		if(!user)	{
 			res.writeHead(404, {'Content-Type': 'application/json'})
 			res.end(JSON.stringify({message: `User  not found`}))
@@ -115,6 +119,7 @@ defineRoute('PATCH', '/users/:id', (req, res) => {
 			res.writeHead(200, {'Content-Type': 'application/json'})
 			res.end(JSON.stringify(user))
 		}
+	}
 })
 
 
@@ -123,6 +128,11 @@ defineRoute('PATCH', '/posts/:id', (req, res) => {
    let post = posts.find((post) => post.id === postsId);
 	const {content} = req.body;
 
+	if (!req.body.content) {
+		res.writeHead(404, {'Content-Type': 'application/json'})
+		res.end(JSON.stringify({message: `Required fields are missing`}))
+	}
+	else {
 		if(!post)	{
 			res.writeHead(404, {'Content-Type': 'application/json'})
 			res.end(JSON.stringify({message: `User  not found`}))
@@ -134,6 +144,7 @@ defineRoute('PATCH', '/posts/:id', (req, res) => {
 			res.writeHead(200, {'Content-Type': 'application/json'})
 			res.end(JSON.stringify(post))
 		}
+	}
 })
 
 defineRoute('DELETE', '/posts/:id', (req, res) => deletePosts(req, res, posts));
