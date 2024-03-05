@@ -1,0 +1,28 @@
+[
+	{
+	  "id": 1,
+	  "text": "Complete homework assignment",
+	  "completed": false
+	},
+	{
+	  "id": 2,
+	  "text": "Go for a run",
+	  "completed": false
+	},
+	{
+	  "id": 3,
+	  "text": "Buy groceries",
+	  "completed": false
+	},
+	{
+	  "id": 4,
+	  "text": "Attend meeting at 3 PM",
+	  "completed": false
+	},
+	{
+	  "id": 5,
+	  "text": "Read a book",
+	  "completed": false
+	}
+ ]
+ 
