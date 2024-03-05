@@ -1,0 +1,19 @@
+{
+	"name": "Todo app",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/server.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node src/server.js",
+		"start:dev": "node --watch src/server.js"
+	},
+	"keywords": [],
+	"author": "Mariana Shydlovska",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.18.3",
+		"uuid": "^9.0.1"
+	}
+}
