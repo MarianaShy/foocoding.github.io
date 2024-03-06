@@ -1,15 +1,16 @@
 {
-  "name": "todos",
-  "version": "1.0.0",
-  "description": "\"todos app\"",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "\"marianashy\"",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.3"
-  }
+	"name": "todos",
+	"version": "1.0.0",
+	"description": "todos app",
+	"main": "src/server.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node src/server.js"
+	},
+	"author": "marianashy",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.18.3"
+	}
 }
