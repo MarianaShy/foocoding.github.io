@@ -1,44 +1,60 @@
+"use strict"
 
-import { getData } from './utils/get-data.js';
+//call  UUID module 
+import { v4 as uuidv4 } from 'uuid';
+
+//call functions which handles data for CRUD operations
+import * as models from "./model.js";
 
 
-// get data from json file
-let todos = await getData('../data/todos.json');
+//handle routes, catch error
 
 
-
+//get all todos
 async function getAll(req, res) {
-	
 	try {
-		res.send(todos) 
-  } catch (error) {
-		throw new Error(error);
-  }
- };
+		const todos = await models.getAll();
+		res.status(200).json( todos ); 
+   } catch (error) {
+	res.status(500).json({ error: error.message });
+   }
+};
 
- async function create(req, res) {
+//create new todo
+async function create(req, res) {
 	try {
-		res.send('Create a new todo') 
-  } catch (error) {
-		throw new Error(error);
-  }
- };
+		if (!req.body.text){
+			res.status(400).json("Missing required field text");
+	   }
+		else {
+			const newTodo = { id: uuidv4(), text: req.body.text, "completed": false };
+			const todos = await models.create(newTodo)
+			res.status(200).json(newTodo);
+	   }
+   } catch (error) {
+		res.status(500).json({ error: error.message });
+	}
+};
 
- async function markComplited(req, res) {
+
+//change
+async function markComplited(req, res) {
 	try {
 		res.send('Delete todo by id') 
-  } catch (error) {
-		throw new Error(error);
-  }
- };
+   } catch (error) {
+	res.status(500).json({ error: error.message });
+   }
+};
 
- async function change(req, res) {
+
+//delete Todo by ID
+async function change(req, res) {
 	try {
 		res.send('Change todo by id')
-  } catch (error) {
-		throw new Error(error);
-  }
- };
+   } catch (error) {
+		res.status(500).json({ error: error.message });
+   }
+};
 
 
 export { getAll, create, markComplited, change };
