@@ -1,10 +1,5 @@
 [
     {
-        "id": "5",
-        "text": "Read a book",
-        "completed": false
-    },
-    {
         "id": "886f1283-7fc5-441c-800a-86e07c4845c6",
         "text": "To go hiking",
         "completed": false
@@ -22,6 +17,11 @@
     {
         "id": "780efe03-aa27-4f47-a840-eaf5580170de",
         "text": "Travel to see the Autora Borelius",
+        "completed": false
+    },
+    {
+        "id": "d9500959-1ca4-459a-8ff1-28a792240b90",
+        "text": "To do the homework",
         "completed": false
     }
 ]

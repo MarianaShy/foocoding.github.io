@@ -37,14 +37,6 @@ async function create(req, res) {
 };
 
 
-//change
-async function markComplited(req, res) {
-	try {
-		res.send('Delete todo by id') 
-   } catch (error) {
-	res.status(500).json({ error: error.message });
-   }
-};
 
 
 //delete Todo by ID
@@ -65,17 +57,22 @@ async function deleteById (req, res) {
 
 
 
-//delete Todo by ID
+//change Todo by ID
 async function change (req, res) {
    try {
       const matchingId = await models.findById(req.params.id)
       if(!matchingId){
          res.status(404).json("No todos with this id");
       }
-      else {
-      await models.deleteById(matchingId)
-      res.status(200).json('Deleted');
-      }
+
+      else if (!req.body.text)  {
+				res.status(404).json("Missing required field text");
+		}
+
+		await models.changeById(matchingId)
+      res.status(200).json('Changed');
+
+
    } catch (error) {
    res.status(500).json({ error: error.message });
    }

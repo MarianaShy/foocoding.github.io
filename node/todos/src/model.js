@@ -32,4 +32,18 @@ async function findById(id)  {
 		return todos
 }
 
-export { getAll, create,  deleteById, findById};
+//change by id
+async function changeById(matching)  {
+	todos = todos.map((item) => {
+		if(item.id === matching.id) {
+			return matching
+		}
+		return item
+		}
+	)
+	postData('../data/todos.json', todos)
+	return todos
+}
+
+
+export { getAll, create,  changeById, findById, deleteById};
