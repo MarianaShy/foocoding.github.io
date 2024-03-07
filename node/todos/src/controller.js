@@ -69,7 +69,8 @@ async function change (req, res) {
 				res.status(404).json("Missing required field text");
 		}
 
-		await models.changeById(matchingId)
+		await models.changeById(matchingId, req.body.text)
+		console.log(matchingId)
       res.status(200).json('Changed');
 
 

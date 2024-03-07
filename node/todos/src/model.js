@@ -33,12 +33,17 @@ async function findById(id)  {
 }
 
 //change by id
-async function changeById(matching)  {
+async function changeById(matching , newText)  {
 	todos = todos.map((item) => {
 		if(item.id === matching.id) {
-			return matching
+			console.log("yes")
+			item.text = newText
+			return item
 		}
+		console.log("no")
 		return item
+		
+
 		}
 	)
 	postData('../data/todos.json', todos)
