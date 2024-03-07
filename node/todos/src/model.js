@@ -4,7 +4,7 @@
 import { getData, postData } from './utils/manage-data.js';
 
 //get data from json file
-let todos = await getData('../data/todos.json');
+let todos = await getData('../data/db.json');
 
 //get all todos from server
 async function getAll () { 
@@ -14,7 +14,7 @@ async function getAll () {
 //create new todo
 async function create (newTodo) { 
 	todos.push(newTodo)
-	postData('../data/todos.json', todos)
+	postData('../data/db.json', todos)
 	return todos
 }
 
@@ -28,7 +28,7 @@ async function findById(id)  {
 //Delete by id
 	async function deleteById(todo)  {
 		todos.splice(todo, 1);
-		postData('../data/todos.json', todos)
+		postData('../data/db.json', todos)
 		return todos
 }
 
@@ -46,7 +46,7 @@ async function changeById(matching , newText)  {
 
 		}
 	)
-	postData('../data/todos.json', todos)
+	postData('../data/db.json', todos)
 	return todos
 }
 
