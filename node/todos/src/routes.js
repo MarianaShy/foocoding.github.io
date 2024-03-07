@@ -13,7 +13,7 @@ router.get('/todos', controller.getAll)
 
 router.post('/todos', controller.create)
 
-router.delete('/todos/:id', controller.markComplited)
+router.delete('/todos/:id', controller.deleteById)
 
 
 router.patch('/todos/:id', controller.change)

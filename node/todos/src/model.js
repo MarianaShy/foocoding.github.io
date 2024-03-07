@@ -19,4 +19,17 @@ async function create (newTodo) {
 }
 
 
-export { getAll, create };
+//Find by id
+async function findById(id)  {
+	let foundById = todos.find((item) => item.id === id )
+	return foundById
+}
+
+//Delete by id
+	async function deleteById(todo)  {
+		todos.splice(todo, 1);
+		postData('../data/todos.json', todos)
+		return todos
+}
+
+export { getAll, create,  deleteById, findById};

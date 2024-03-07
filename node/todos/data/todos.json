@@ -1,26 +1,6 @@
 [
     {
-        "id": 1,
-        "text": "Complete homework assignment",
-        "completed": false
-    },
-    {
-        "id": 2,
-        "text": "Go for a run",
-        "completed": false
-    },
-    {
-        "id": 3,
-        "text": "Buy groceries",
-        "completed": false
-    },
-    {
-        "id": 4,
-        "text": "Attend meeting at 3 PM",
-        "completed": false
-    },
-    {
-        "id": 5,
+        "id": "5",
         "text": "Read a book",
         "completed": false
     },
@@ -37,6 +17,11 @@
     {
         "id": "a6b4645b-fa4d-46f6-b923-ddc3a1caa1a5",
         "text": "To read a book about  swedish birds",
+        "completed": false
+    },
+    {
+        "id": "780efe03-aa27-4f47-a840-eaf5580170de",
+        "text": "Travel to see the Autora Borelius",
         "completed": false
     }
 ]

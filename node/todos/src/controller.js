@@ -48,13 +48,37 @@ async function markComplited(req, res) {
 
 
 //delete Todo by ID
-async function change(req, res) {
-	try {
-		res.send('Change todo by id')
+async function deleteById (req, res) {
+   try {
+      const matchingId = await models.findById(req.params.id)
+      if(!matchingId){
+         res.status(404).json("No todos with this id");
+      }
+      else {
+      await models.deleteById(matchingId)
+      res.status(200).json('Deleted');
+      }
    } catch (error) {
-		res.status(500).json({ error: error.message });
+   res.status(500).json({ error: error.message });
    }
 };
 
 
-export { getAll, create, markComplited, change };
+
+//delete Todo by ID
+async function change (req, res) {
+   try {
+      const matchingId = await models.findById(req.params.id)
+      if(!matchingId){
+         res.status(404).json("No todos with this id");
+      }
+      else {
+      await models.deleteById(matchingId)
+      res.status(200).json('Deleted');
+      }
+   } catch (error) {
+   res.status(500).json({ error: error.message });
+   }
+};
+
+export { getAll, create, deleteById, change };
