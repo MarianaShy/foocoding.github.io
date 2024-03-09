@@ -28,8 +28,12 @@ rl.setPrompt("Your command: ");
 rl.prompt();
 
 
-async function test() {
+rl.on("line", async function test() {
 	const testInst = await getAll()
-console.log(testInst)}
-
+console.log(testInst)
 test()
+}
+)
+
+
+
