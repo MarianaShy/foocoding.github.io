@@ -32,12 +32,18 @@ rl.prompt();
 
 //set functions to commands
 rl.on("line", async function  (input) {
-	if(input === "To do list"){
+	if(input.toUpperCase() === "TO DO LIST"){
 	const answer = await getAll()
 	console.log(answer)
 	}
-	else
-	console.log("no input")
+	else if (input.toUpperCase() === "end")
+	{process.exit(0);}
+	else 
+	{
+		console.log("Please enter correct command")
+		instructions();
+	}
+
 }
  );
 
