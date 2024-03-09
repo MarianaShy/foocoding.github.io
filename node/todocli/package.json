@@ -1,15 +1,18 @@
 {
-  "name": "todocli",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.6.7"
-  }
+	"name": "todocli",
+	"version": "1.0.0",
+	"description": "",
+	"main": "cli.js",
+	"scripts": {
+		"start": "node cli.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"type": "module",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.6.7",
+		"commander": "^12.0.0"
+	}
 }

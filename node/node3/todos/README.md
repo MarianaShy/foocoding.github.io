@@ -1,5 +1,7 @@
 Welcome to the Todos API server! This server allows you to manage your To Do list with ease through HTTP requests. Below is a brief overview of the available operations and their endpoints:
 
+The base URL for accessing the API is: http://127.0.0.1:3000
+
 GET /todos:
 This endpoint retrieves all todos from the server.
 Example: GET /todos
