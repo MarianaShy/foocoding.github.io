@@ -35,14 +35,15 @@ rl.prompt();
 
 //set functions to commands
 rl.on("line", (input) => {
-	const [command, ...arguments] = input.toUpperCase().trim().split(" ");
-	const text = arguments.join(" ")
+	let [command, ...arguments] = input.trim().split(" ");
+	command = command.toUpperCase()
+	
 
 	try{
 		if (command === "END") process.exit(0)
 		else if (command === "COMMANDS") instructions()
 		else {	
-			commandsController(command, text)
+			commandsController(command, arguments)
 			console.log(input)
 		}
 	}

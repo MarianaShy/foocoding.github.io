@@ -14,7 +14,6 @@ async function getAll() {
 }
 
 async function post(text) {
-	//const text = arguments.join(" ")
 	try {
 		const response = await fetch("http://localhost:3000/todos",
 		{
@@ -30,4 +29,20 @@ async function post(text) {
 	 }
 }
  
-module.exports = {getAll, post};
+
+async function deleteById(id) {
+	try {
+		const response = await fetch("http://localhost:3000/todos/" + id,
+		{
+		method: "Delete",
+		headers: {"Content-Type": "application/json"},
+		body: JSON.stringify({id}),
+		});
+		const deleted = await response.json();
+		return deleted;
+	 	} 
+	catch (error) {
+		console.error(error);
+	 }
+}
+module.exports = {getAll, post, deleteById};

@@ -1,10 +1,5 @@
 [
     {
-        "id": "886f1283-7fc5-441c-800a-86e07c4845c6",
-        "text": "To go hiking",
-        "completed": false
-    },
-    {
         "id": "96fa5aad-ce03-4d36-a283-4dbe173870dd",
         "text": "To go hiking",
         "completed": false
@@ -42,6 +37,16 @@
     {
         "id": "642fec16-66d2-4516-854b-f154fa8383a1",
         "text": "TO DO SOMETHING",
+        "completed": false
+    },
+    {
+        "id": "13d31ccb-9a27-4133-930b-2ff87fe18bf4",
+        "text": "To go to the FooCoding",
+        "completed": false
+    },
+    {
+        "id": "ad47b6e8-231b-4631-ac32-1cead36b6d43",
+        "text": "something",
         "completed": false
     }
 ]
