@@ -1,23 +1,26 @@
+//-------------------set up the application -------------------------------
+
+
 //import modules
 
 const readline = require("readline");
 
-const getAll =  require("./instructions.js")
+const commandsController =  require("./controller")
 
 
 // Display instructions on how to use each command
 
 function instructions () {
 	console.log("                    Commands:");
-	console.log("To do list ----------------------- Display your To Do list;");
+	console.log("list ------------------------- Display your To Do list;");
 	console.log("post <task> ------------------ Create new To Do task;");
-	console.log("change <id> <task> ----------- Change chosen task;");
+	console.log("change <task> <id>  ----------- Change chosen task;");
 	console.log("delete <id> ------------------ Delete chosen task;");
-	
+	console.log("commands --------------------- Show all commands;");
 	console.log("end -------------------------- Quit the application;");
  }
  
- instructions();
+instructions();
 
 // call readline
  const rl = readline.createInterface(
@@ -31,21 +34,23 @@ rl.setPrompt("Your command: ");
 rl.prompt();
 
 //set functions to commands
-rl.on("line", async function  (input) {
-	if(input.toUpperCase() === "TO DO LIST"){
-	const answer = await getAll()
-	console.log(answer)
+rl.on("line", (input) => {
+	const [command, ...arguments] = input.toUpperCase().trim().split(" ");
+	const text = arguments.join(" ")
+
+	try{
+		if (command === "END") process.exit(0)
+		else if (command === "COMMANDS") instructions()
+		else {	
+			commandsController(command, text)
+			console.log(input)
+		}
 	}
-	else if (input.toUpperCase() === "end")
-	{process.exit(0);}
-	else 
-	{
-		console.log("Please enter correct command")
-		instructions();
+	catch(error){
+		console.error(error);
 	}
-
-}
- );
+} );
 
 
 
+module.exports = instructions;

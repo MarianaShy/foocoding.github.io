@@ -28,5 +28,20 @@
         "id": "a5a49115-c757-479a-98ae-2ee63c92ea98",
         "text": "rr",
         "completed": false
+    },
+    {
+        "id": "b618f3fd-e546-42a8-9ae8-5f96caca1990",
+        "text": "NEW COMMAND",
+        "completed": false
+    },
+    {
+        "id": "b24cfefa-5718-4cb5-afe5-83f4451b537b",
+        "text": "GGGGG",
+        "completed": false
+    },
+    {
+        "id": "642fec16-66d2-4516-854b-f154fa8383a1",
+        "text": "TO DO SOMETHING",
+        "completed": false
     }
 ]
