@@ -4,16 +4,19 @@
 import { getData, postData } from './utils/manage-data.js';
 
 //get data from json file
-let todos = await getData('../data/db.json');
 
 //get all todos from server
 async function getAll () { 
+	let todos = await getData('../data/db.json');
+
 	return todos
 }
 
 
 //Get by id
 async function getById(id)  {
+	let todos = await getData('../data/db.json');
+
 	//find by Index
 	let foundById = todos.find((item) => item.id === id )
 	console.log(foundById)
@@ -22,32 +25,32 @@ async function getById(id)  {
 }
 
 
+
+
 //create new todo
 async function create (newTodo) { 
+	let todos = await getData('../data/db.json');
+
 	todos.push(newTodo)
 	postData('../data/db.json', todos)
 	return todos
 }
 
 
-//Find by id
-async function findById(id)  {
-	//find by Index
-	let foundById = todos.find((item) => item.id === id )
-	console.log(foundById)
-	//const index = todos.findIndex(foundById)
-	return foundById
-}
 
 //Delete by id
-	async function deleteById(todo)  {
-		todos.splice(todo, 1);
+	async function deleteById(todoById)  {
+		let todos = await getData('../data/db.json');
+		const index = todos.findIndex((todo) => todoById.id === todo.id)
+		todos.splice(index, 1);
 		postData('../data/db.json', todos)
-		return todos
+		return index
 }
 
 //change by id
 async function changeById(matching , newText)  {
+	let todos = await getData('../data/db.json');
+
 	todos = todos.map((item) => {
 		if(item.id === matching.id) {
 			console.log("yes")
@@ -65,4 +68,4 @@ async function changeById(matching , newText)  {
 }
 
 
-export { getAll, getById, create,  changeById, findById, deleteById};
+export { getAll, getById, create,  changeById, deleteById};

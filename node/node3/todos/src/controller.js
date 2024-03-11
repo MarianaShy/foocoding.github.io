@@ -26,8 +26,13 @@ async function getAll(req, res) {
 async function getById(req, res) {
 	try {
 		const todosById = await models.getById(req.params.id);
-		res.status(200).json( todosById ); 
-   } catch (error) {
+		if (!todosById) {
+         res.status(404).json("No todos with this id");
+		}
+		else {
+			res.status(200).json( todosById ); }
+		}
+		 catch (error) {
 	res.status(500).json({ error: error.message });
    }
 };
@@ -40,7 +45,7 @@ async function getById(req, res) {
 async function create(req, res) {
 	try {
 		if (!req.body.text){
-			res.status(400).json("Missing required field text");
+			res.status(400).json;
 	   }
 		else {
 			const newTodo = { id: uuidv4(), text: req.body.text, "completed": false };
@@ -58,16 +63,15 @@ async function create(req, res) {
 //delete Todo by ID
 async function deleteById (req, res) {
    try {
-
 		//findIndex
-      const matchingIndex = await models.findById(req.params.id)
-      if(!matchingIndex > -1){
+      const todoById = await models.getById(req.params.id)
+      if(!todoById){
          res.status(404).json("No todos with this id");
       }
       else {
-      await models.deleteById(matchingIndex)
-      res.status(200).json('Deleted');
-      }
+      const deleted = await models.deleteById(todoById)
+		res.status(204).json("The task was deleted")
+			}
    } catch (error) {
    res.status(500).json({ error: error.message });
    }
@@ -88,7 +92,6 @@ async function change (req, res) {
 		}
 // an index instead of matching id
 		await models.changeById(matchingId, req.body.text)
-		console.log(matchingId)
       res.status(200).json('Changed');
 
 
