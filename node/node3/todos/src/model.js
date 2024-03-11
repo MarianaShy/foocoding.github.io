@@ -60,7 +60,7 @@ async function changeById(matching , newText)  {
 		}
 		})
 	postData('../data/db.json', todos)
-	return changed[0]
+	return changed
 }
 
 
