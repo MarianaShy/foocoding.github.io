@@ -58,9 +58,14 @@ async function changeById(matching , newText)  {
 		if (item.id === matching.id) {
 			 return { ...item, text: newText };
 		}
+		else {
+			return item;
+	  }
 		})
-	postData('../data/db.json', todos)
-	return changed
+	const index = todos.findIndex((todo) =>matching.id === todo.id)
+
+	postData('../data/db.json', changed)
+	return changed[index]
 }
 
 
