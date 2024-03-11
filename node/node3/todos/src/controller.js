@@ -63,7 +63,6 @@ async function create(req, res) {
 //delete Todo by ID
 async function deleteById (req, res) {
    try {
-		//findIndex
       const todoById = await models.getById(req.params.id)
       if(!todoById){
          res.status(404).json("No todos with this id");
@@ -81,20 +80,15 @@ async function deleteById (req, res) {
 
 //change Todo by ID
 async function change (req, res) {
-   try {
-      const matchingId = await models.findById(req.params.id)
-      if(!matchingId){
+	try {
+      const todoById = await models.getById(req.params.id)
+      if(!todoById){
          res.status(404).json("No todos with this id");
       }
-
-      else if (!req.body.text)  {
-				res.status(404).json("Missing required field text");
-		}
-// an index instead of matching id
-		await models.changeById(matchingId, req.body.text)
-      res.status(200).json('Changed');
-
-
+      else {
+      const changed = await models.changeById(todoById, req.body.text)
+		res.status(200).json(changed)
+			}
    } catch (error) {
    res.status(500).json({ error: error.message });
    }

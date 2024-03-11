@@ -47,24 +47,20 @@ async function create (newTodo) {
 		return index
 }
 
+
+
+
 //change by id
 async function changeById(matching , newText)  {
 	let todos = await getData('../data/db.json');
 
-	todos = todos.map((item) => {
-		if(item.id === matching.id) {
-			console.log("yes")
-			item.text = newText
-			return item
+	const changed = todos.map(item => {
+		if (item.id === matching.id) {
+			 return { ...item, text: newText };
 		}
-		console.log("no")
-		return item
-		
-
-		}
-	)
+		})
 	postData('../data/db.json', todos)
-	return todos
+	return changed[0]
 }
 
 
