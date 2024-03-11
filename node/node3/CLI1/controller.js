@@ -43,7 +43,7 @@ async function commandsController (command, arguments) {
 		 }
 		const id = arguments[arguments.length -1]
 		const deleted = await deleteById(id)
-		console.log(deleted)
+		console.log("The task was deleted")
 		break
 
 

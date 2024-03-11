@@ -3,29 +3,26 @@
 async function getAll() {
 	try {
 		const response = await fetch("http://localhost:3000/todos");
-		if (!response.ok) {
-			throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
-		}
+		
 		const toDoList = await response.json();
 		return toDoList;
-	 } catch (error) {
+	} catch (error) {
 		console.error(error);
-	 }
+	}
 }
+
 
 
 async function getById(id) {
 	try {
 		const response = await fetch("http://localhost:3000/todos/" + id);
-		if (!response.ok) {
-			throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
-		}
 		const task = await response.json();
 		return task;
-	 } catch (error) {
+	} catch (error) {
 		console.error(error);
-	 }
+	}
 }
+
 
 
 async function post(text) {
@@ -41,21 +38,21 @@ async function post(text) {
 	 	} 
 	catch (error) {
 		console.error(error);
-	 }
+	}
 }
- 
+
+
+
 
 async function deleteById(id) {
 	try {
 		const response = await fetch("http://localhost:3000/todos/" + id,
 		{
-		method: "Delete",
-		//headers: {"Content-Type": "application/json"},
-		//dont sent head body
-		//body: JSON.stringify({id}),
+		method: "DELETE",
+		headers: {"Content-Type": "application/json"},
+		body: JSON.stringify({id}),
 		});
-		const deleted = await response.json();
-		return deleted;
+		await response;
 	 	} 
 	catch (error) {
 		console.error(error);
