@@ -58,4 +58,26 @@ async function deleteById(id) {
 		console.error(error);
 	 }
 }
-module.exports = {getAll, getById, post, deleteById};
+
+
+async function changeById(id, text) {
+	try {
+		const response = await fetch("http://localhost:3000/todos/" + id,
+		{
+		method: "PATCH",
+		headers: {"Content-Type": "application/json"},
+		body: JSON.stringify({text}),
+		});
+		const taskChanged = await response.json();
+		return taskChanged;
+	 	} 
+	catch (error) {
+		console.error(error);
+	 }
+}
+
+
+
+
+
+module.exports = {getAll, getById, post, deleteById, changeById};
