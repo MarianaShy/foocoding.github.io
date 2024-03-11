@@ -13,5 +13,10 @@
         "id": "d9500959-1ca4-459a-8ff1-28a792240b90",
         "text": "To do the homework",
         "completed": false
+    },
+    {
+        "id": "e76af241-77f8-4507-b8fe-4d7458280114",
+        "text": "To go for a walk",
+        "completed": false
     }
 ]

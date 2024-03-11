@@ -13,6 +13,21 @@ async function getAll() {
 	 }
 }
 
+
+async function getById(id) {
+	try {
+		const response = await fetch("http://localhost:3000/todos/" + id);
+		if (!response.ok) {
+			throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
+		}
+		const task = await response.json();
+		return task;
+	 } catch (error) {
+		console.error(error);
+	 }
+}
+
+
 async function post(text) {
 	try {
 		const response = await fetch("http://localhost:3000/todos",
@@ -46,4 +61,4 @@ async function deleteById(id) {
 		console.error(error);
 	 }
 }
-module.exports = {getAll, post, deleteById};
+module.exports = {getAll, getById, post, deleteById};

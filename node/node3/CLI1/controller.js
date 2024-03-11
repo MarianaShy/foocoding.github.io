@@ -1,6 +1,6 @@
 //-------------------set up functions to commands -------------------------------
 
-const {getAll, post, deleteById} =  require("./instructions.js")
+const {getAll, getById, post, deleteById} =  require("./instructions.js")
 
 async function commandsController (command, arguments) {
 	switch (command){
@@ -8,14 +8,35 @@ async function commandsController (command, arguments) {
 		const list = await getAll()
 		console.log(list)
 		break
+
+
+
+	case "TASK":
+		if (!arguments) {
+			throw new Error("Please provide required arguments");
+		}
+		else{
+			const id = arguments[arguments.length -1]
+			const task = await getById(id)
+			console.log(task)
+		}
+		
+	break	
+
+
+
 	case "POST":
 		if (!arguments) {
 			throw new Error("Please provide required arguments");
 		 }
-		const text = arguments.join(" ")
+		else
+		{const text = arguments.join(" ")
 		const createNew = await post(text)
-		console.log(createNew)
+		console.log(createNew)}
 		break
+
+
+
 		case "DELETE":
 		if (!arguments) {
 			throw new Error("Please provide required arguments");
@@ -24,6 +45,8 @@ async function commandsController (command, arguments) {
 		const deleted = await deleteById(id)
 		console.log(deleted)
 		break
+
+
 	default:
 		console.log("Please enter correct command")
 }
