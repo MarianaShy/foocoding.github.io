@@ -11,6 +11,17 @@ async function getAll () {
 	return todos
 }
 
+
+//Get by id
+async function getById(id)  {
+	//find by Index
+	let foundById = todos.find((item) => item.id === id )
+	console.log(foundById)
+	//const index = todos.findIndex(foundById)
+	return foundById
+}
+
+
 //create new todo
 async function create (newTodo) { 
 	todos.push(newTodo)
@@ -54,4 +65,4 @@ async function changeById(matching , newText)  {
 }
 
 
-export { getAll, create,  changeById, findById, deleteById};
+export { getAll, getById, create,  changeById, findById, deleteById};

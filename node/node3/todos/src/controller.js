@@ -20,6 +20,22 @@ async function getAll(req, res) {
    }
 };
 
+
+
+//get by id
+async function getById(req, res) {
+	try {
+		const todosById = await models.getById(req.params.id);
+		res.status(200).json( todosById ); 
+   } catch (error) {
+	res.status(500).json({ error: error.message });
+   }
+};
+
+
+
+
+
 //create new todo
 async function create(req, res) {
 	try {
@@ -81,4 +97,4 @@ async function change (req, res) {
    }
 };
 
-export { getAll, create, deleteById, change };
+export { getAll, create, deleteById, change, getById };

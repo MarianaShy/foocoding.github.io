@@ -13,6 +13,8 @@ export const router = Router();
 
 router.get('/todos', controller.getAll)
 
+router.get('/todos/:id', controller.getById)
+
 router.post('/todos', validateData,  controller.create)
 
 router.delete('/todos/:id', controller.deleteById)
