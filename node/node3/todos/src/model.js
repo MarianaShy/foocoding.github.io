@@ -21,7 +21,10 @@ async function create (newTodo) {
 
 //Find by id
 async function findById(id)  {
+	//find by Index
 	let foundById = todos.find((item) => item.id === id )
+	console.log(foundById)
+	//const index = todos.findIndex(foundById)
 	return foundById
 }
 

@@ -38,7 +38,7 @@ rl.on("line", (input) => {
 	let [command, ...arguments] = input.trim().split(" ");
 	command = command.toUpperCase()
 	
-
+//try with text, id
 	try{
 		if (command === "END") process.exit(0)
 		else if (command === "COMMANDS") instructions()

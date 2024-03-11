@@ -35,8 +35,9 @@ async function deleteById(id) {
 		const response = await fetch("http://localhost:3000/todos/" + id,
 		{
 		method: "Delete",
-		headers: {"Content-Type": "application/json"},
-		body: JSON.stringify({id}),
+		//headers: {"Content-Type": "application/json"},
+		//dont sent head body
+		//body: JSON.stringify({id}),
 		});
 		const deleted = await response.json();
 		return deleted;

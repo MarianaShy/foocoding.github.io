@@ -1,10 +1,5 @@
 [
     {
-        "id": "96fa5aad-ce03-4d36-a283-4dbe173870dd",
-        "text": "To go hiking",
-        "completed": false
-    },
-    {
         "id": "a6b4645b-fa4d-46f6-b923-ddc3a1caa1a5",
         "text": "To read a book",
         "completed": false
@@ -47,6 +42,16 @@
     {
         "id": "ad47b6e8-231b-4631-ac32-1cead36b6d43",
         "text": "something",
+        "completed": false
+    },
+    {
+        "id": "c227df24-514c-40e4-9812-92a75e84fa60",
+        "text": "To do something",
+        "completed": false
+    },
+    {
+        "id": "500af66e-8d0a-4cef-aed4-df8ccf10a984",
+        "text": "To do the homework",
         "completed": false
     }
 ]
