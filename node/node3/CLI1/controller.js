@@ -15,12 +15,13 @@ async function commandsController (command, arguments) {
 
 
 	case "TASK":
-		if (!arguments) {
-			throw new Error("Please provide required arguments");
+		const idTask = arguments[arguments.length -1]
+
+		if (!idTask) {
+			console.log( "\x1b[31mPlease provide required arguments\x1b[0m");
 		}
 		else{
-			const id = arguments[arguments.length -1]
-			const task = await getById(id)
+			const task = await getById(idTask)
 			console.log(task)
 		}
 		
@@ -29,11 +30,12 @@ async function commandsController (command, arguments) {
 
 
 	case "POST":
-		if (!arguments) {
-			throw new Error("Please provide required arguments");
+		const text = arguments.join(" ")
+		if (!text) {
+			console.log( "\x1b[31mPlease provide required arguments\x1b[0m");
 		 }
 		else
-		{const text = arguments.join(" ")
+		{
 		const createNew = await post(text)
 		console.log(createNew)}
 		break
@@ -41,22 +43,26 @@ async function commandsController (command, arguments) {
 
 
 		case "DELETE":
-		if (!arguments) {
-			throw new Error("Please provide required arguments");
-		 }
 		const id = arguments[arguments.length -1]
-		const deleted = await deleteById(id)
-		console.log("The task was deleted")
+			if (!id) {
+			console.log( "\x1b[31mPlease provide required arguments\x1b[0m");
+		 }
+		else {
+				const deleted = await deleteById(id)
+		console.log("\x1b[32mThe task was deleted\x1b[0m")
+		}
+	
 		break
 
 
 		case "CHANGE":
-		if (!arguments) {
-			console.log("Please provide required arguments");
-		 }
-		idChange = arguments[arguments.length -1]
-		const textChange = arguments.slice(0, -1).join(" ")
+			const idChange = arguments[arguments.length -1]
+			const textChange = arguments.slice(0, -1).join(" ")
 
+		if (!idChange || !textChange) {
+			console.log( "\x1b[31mPlease provide required arguments\x1b[0m");
+		 }
+		
 		const changed = await changeById(idChange, textChange)
 		console.log(changed)
 		break

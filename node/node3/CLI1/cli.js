@@ -15,10 +15,10 @@ function instructions () {
 	console.log('\x1b[38;2;255;165;0mlist\x1b[0m \x1b[38;2;255;255;0m ------------------------- \x1b[0m \x1b[38;2;173;216;230mDisplay To Do list;\x1b[0m');
 	console.log('\x1b[38;2;255;165;0mtask\x1b[0m \x1b[38;2;255;255;0m ------------------------- \x1b[0m \x1b[38;2;173;216;230mDisplay one task by chosen ID;\x1b[0m');
 	console.log('\x1b[38;2;255;165;0mpost <task>\x1b[0m \x1b[38;2;255;255;0m ------------------ \x1b[0m \x1b[38;2;173;216;230mCreate new To Do task;\x1b[0m');
-	console.log('\x1b[38;2;255;165;0mchange <task> <id>\x1b[0m \x1b[38;2;255;255;0m ------------------ \x1b[0m \x1b[38;2;173;216;230mChange chosen task;\x1b[0m');
+	console.log('\x1b[38;2;255;165;0mchange <task> <id>\x1b[0m \x1b[38;2;255;255;0m ----------- \x1b[0m \x1b[38;2;173;216;230mChange chosen task;\x1b[0m');
 	console.log('\x1b[38;2;255;165;0mdelete <id>\x1b[0m \x1b[38;2;255;255;0m ------------------ \x1b[0m \x1b[38;2;173;216;230mDelete one task by chosen ID;\x1b[0m');
-	console.log('\x1b[38;2;255;165;0mcommands\x1b[0m \x1b[38;2;255;255;0m ------------------ \x1b[0m \x1b[38;2;173;216;230mShow all commands;\x1b[0m');
-	console.log('\x1b[38;2;255;165;0mend\x1b[0m \x1b[38;2;255;255;0m ------------------ \x1b[0m \x1b[38;2;173;216;230mQuit the application;\x1b[0m');
+	console.log('\x1b[38;2;255;165;0mcommands\x1b[0m \x1b[38;2;255;255;0m --------------------- \x1b[0m \x1b[38;2;173;216;230mShow all commands;\x1b[0m');
+	console.log('\x1b[38;2;255;165;0mend\x1b[0m \x1b[38;2;255;255;0m -------------------------- \x1b[0m \x1b[38;2;173;216;230mQuit the application;\x1b[0m');
  }
  
 
